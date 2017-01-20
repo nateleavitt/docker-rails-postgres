@@ -23,7 +23,7 @@ var config = {
 
     // must match config.webpack.output_dir
     path: path.join(__dirname, '..', 'build'),
-    publicPath: '/webpack_build/',
+    publicPath: '/webpack/',
 
     filename: production ? '[name]-[chunkhash].js' : '[name].js'
   },
@@ -62,7 +62,7 @@ if (production) {
     port: devServerPort,
     headers: { 'Access-Control-Allow-Origin': '*' }
   };
-  config.output.publicPath = '//localhost:' + devServerPort + '/webpack_build/';
+  config.output.publicPath = '//localhost:' + devServerPort + '/webpack/';
   // Source maps
   config.devtool = 'cheap-module-eval-source-map';
 }

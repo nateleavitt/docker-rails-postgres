@@ -23,7 +23,7 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - ./rails:/mnt/rails
-      - ./volumes/webpack_build:/mnt/rails/public/webpack_build
+      - ./volumes/webpack_build:/mnt/rails/public/webpack
     ports:
       - "3000:3000"
     env_file: .env
