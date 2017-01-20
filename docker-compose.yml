@@ -1,0 +1,34 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  webpack:
+    build: webpack/.
+    command: ./node_modules/.bin/webpack-dev-server --config config/webpack.config.js --host '0.0.0.0'
+    volumes:
+      - ./webpack/config:/mnt/webpack/config
+      - ./webpack/src:/mnt/webpack/src
+      - ./volumes/webpack_build:/mnt/webpack/build
+    ports:
+      - '3808:3808'
+
+  web:
+    build: rails/.
+    working_dir: /mnt/rails
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./rails:/mnt/rails
+      - ./volumes/webpack_build:/mnt/rails/public/webpack_build
+    ports:
+      - "3000:3000"
+    env_file: .env
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
