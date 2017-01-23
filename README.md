@@ -4,12 +4,6 @@ This repo is used as a template to get started with a development environment us
 
 
 
-### Notes:###
-
-A volume will be created on the host machine for the data to allow for persistent data. No need to reseed your database.
-
-
-
 ### Required###
 
 You need to have docker installed and running
@@ -20,15 +14,26 @@ You need to have docker installed and running
 
 Create the database:
 
-```
+```ruby
+docker-compose build
+docker-compose up
 docker-compose run web bundle exec rails db:create
 ```
 
 
 
-### Boot###
+### Start/stop###
 
+```ruby
+docker-compose up # this is used to boot
+docker-compose down # this is used to shutdown
 ```
-docker-compose up
-```
+
+
+
+### Notes:
+
+A volume will be created on the host machine for the data to allow for persistent data. No need to reseed your database.
+
+Read more about [Docker compose](https://docs.docker.com/compose/)
 
