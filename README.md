@@ -18,7 +18,7 @@ Create the database:
 # Move rails/secrets.sample.yml file
 mv rails/config/secrets.sample.yml rails/config/secrets.yml
 
-# Generate new token & copy output to sample.yml secret_key_base
+# Generate new token & copy output to .env SECRET_KEY_BASE
 cd rails && bundle exec rake secret
 
 # Build images and boot
@@ -52,5 +52,5 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
 
 - would be nice to have a setup script that
   - renames all files with 'drwp' entries to a custom name (project)
-  - generates all new secret files
+  - generates all new secret tokens
 
