@@ -27,6 +27,8 @@ services:
     ports:
       - "3000:3000"
     env_file: .env
+    links:
+      - db
     depends_on:
       - db
 
