@@ -17,19 +17,30 @@ var config = {
     'application': './src/application.js'
   },
 
+  module: {
+    noParse: '/(\.min\.js|\.min\.css)$/',
+    loaders: [
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+      // { test: /\.scss$/, loaders: ["style", "css", "sass"] },
+      // { test: /\.png$/, loader: 'url-loader?limit=100000' },
+      // { test: /\.jpg$/, loader: 'file-loader' },
+      // { test: /\.svg$/, loader: 'file-loader' }
+    ]
+  },
+
   output: {
     // Build assets directly in to public/webpack/, let webpack know
     // that all webpacked assets start with webpack/
 
     // must match config.webpack.output_dir
-    path: path.join(__dirname, '..', 'build'),
+    path: path.resolve('/mnt', 'webpack', 'build'),
     publicPath: '/webpack/',
 
     filename: production ? '[name]-[chunkhash].js' : '[name].js'
-  },
-
-  resolve: {
-    root: path.join(__dirname, '..', 'build')
   },
 
   plugins: [
