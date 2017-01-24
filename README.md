@@ -53,4 +53,5 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
 - would be nice to have a setup script that
   - renames all files with 'drwp' entries to a custom name (project)
   - generates all new secret tokens
+  - removes git remote origin
 
