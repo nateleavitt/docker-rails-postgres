@@ -1,3 +1,6 @@
+# Volumes folder
+volumes/
+# Rails specifics
 /rails/*.rbc
 /rails/capybara-*.html
 /rails/.rspec
