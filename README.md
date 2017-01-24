@@ -52,6 +52,16 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
 
 - would be nice to have a setup script that
   - renames all files with 'drwp' entries to a custom name (project)
-  - generates all new secret tokens
-  - removes git remote origin
+    - rails/config/database.yml
+    - rails/config/environments/production.rb
+    - rails/config/initializers/session_store.rb
+    - rails/app/views/layouts/application.html.erb
+    - rails/config/application.rb
+    - webpack/package.json
+    - README.md
+  - generate secret.yml, new secret token, and create db
+    - mv rails/config/secrets.sample.yml to secrets.yml
+    - rake secret and place in .env file
+    - bundle exec rails db:create
+  - removes git remote origin and adds new origin
 
