@@ -62,6 +62,7 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
   - generate secret.yml, new secret token, and create db
     - mv rails/config/secrets.sample.yml to secrets.yml
     - rake secret and place in .env file
-    - bundle exec rails db:create
+    - rake db:create
+    - rake db:migrate
   - removes git remote origin and adds new origin
 
