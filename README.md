@@ -15,11 +15,12 @@ You need to have docker installed and running
 Create the database:
 
 ```shell
-# Move rails/secrets.sample.yml file
+# Move .env-sample and rails/secrets.sample.yml file
+mv .env-sample .env
 mv rails/config/secrets.sample.yml rails/config/secrets.yml
 
 # Generate new token & copy output to .env SECRET_KEY_BASE
-cd rails && bundle exec rake secret
+docker-compose run web bundle exec rake secret
 
 # Build images and boot
 docker-compose build
@@ -51,7 +52,7 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
 ### TODO###
 
 - would be nice to have a setup script that
-  - renames all files with 'drwp' entries to a custom name (project)
+  - renames all files with 'drp' entries to a custom name (project)
     - rails/config/database.yml
     - rails/config/environments/production.rb
     - rails/config/initializers/session_store.rb
