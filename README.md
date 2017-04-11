@@ -16,7 +16,7 @@ Create the database:
 
 ```shell
 # Remove git remote origin
-git remove remote origin
+git remote remove origin
 
 # Move .env-sample and rails/secrets.sample.yml file
 mv .env-sample .env
