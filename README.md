@@ -1,6 +1,6 @@
 # docker-rails-webpack-postgres
 
-This repo is used as a template to get started with a development environment using Docker Compose, Rails, Webpack (using Yarn), and Postgress. 
+This repo is used as a template to get started with a development environment using Docker Compose, Rails, and Postgress. 
 
 
 
@@ -57,7 +57,6 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
     - rails/config/initializers/session_store.rb
     - rails/app/views/layouts/application.html.erb
     - rails/config/application.rb
-    - webpack/package.json
     - README.md
   - generate secret.yml, new secret token, and create db
     - mv rails/config/secrets.sample.yml to secrets.yml
