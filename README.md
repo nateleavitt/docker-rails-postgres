@@ -15,6 +15,9 @@ You need to have docker installed and running
 Create the database:
 
 ```shell
+# Remove git remote origin
+git remove remote origin
+
 # Move .env-sample and rails/secrets.sample.yml file
 mv .env-sample .env
 mv rails/config/secrets.sample.yml rails/config/secrets.yml
