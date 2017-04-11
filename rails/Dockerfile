@@ -24,5 +24,5 @@ WORKDIR /mnt/rails
 RUN bundle install
 COPY . /mnt/rails
 
-EXPOSE 3000
+EXPOSE 5000
 
