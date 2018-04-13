@@ -4,13 +4,13 @@ This repo is used as a template to get started with a development environment us
 
 
 
-### Required###
+### Required ###
 
 You need to have docker installed and running
 
 
 
-### Installation###
+### Installation ###
 
 Create the database:
 
@@ -35,7 +35,7 @@ docker-compose run web bundle exec rails db:create
 
 
 
-### Start/stop###
+### Start/stop ###
 
 ```ruby
 docker-compose up # this is used to boot
@@ -52,7 +52,7 @@ Read more about [Docker compose](https://docs.docker.com/compose/)
 
 
 
-### TODO###
+### TODO ###
 
 - would be nice to have a setup script that
   - renames all files with 'drp' entries to a custom name (project)
